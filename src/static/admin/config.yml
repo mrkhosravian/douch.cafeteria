@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # Branch to update (optional; defaults to master)
+  branch: main # Branch to update (optional; defaults to master)
 
 # This line should *not* be indented
 media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
@@ -8,8 +8,121 @@ media_folder: "images/uploads" # Media files will be stored in the repo under im
 collections:
   - name: "menu"
     label: "Menu"
-    folder: "_data/meun"
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    folder: "_data"
+    create: true
+    slug: "menu"
     fields:
-      - {label: "Name", name: "name", widget: "string"}
-      - {label: "Price (Toman)", name: "price", widget: "number"}
+      - label: "پیتزا"
+        name: "pizza"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "نوشیدنی گرم"
+        name: "hot-beverage"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "نوشیدنی سرد"
+        name: "cold-beverage"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "صبحانه"
+        name: "breakfast"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "پاستا"
+        name: "pasta"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "خوراک"
+        name: "food"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "سالاد و پیش غذا"
+        name: "salad"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
+      - label: "دسر و شیرینی"
+        name: "dessert"
+        widget: "list"
+        summary: '{{fields.name}}: {{fields.price}} تومن'
+        fields:
+          - label: "عنوان"
+            name: "name"
+            widget: "string"
+          - label: "توضیحات"
+            name: "description"
+            widget: "string"
+          - label: "قیمت"
+            name: "price"
+            widget: "number"
